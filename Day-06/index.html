@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive CSS Landing Page - Full Practice Demo</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            line-up: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        /* Object-Oriented CSS: Base Card */
+        .card {
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            padding: 30px;
+            margin: 20px;
+            transition: all 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+        }
+
+        /* Pseudo-classes: First/Last/Odd/Even */
+        .feature-list li:first-child {
+            border-top-left-radius: 15px;
+            border-top-right-radius: 15px;
+            background: linear-gradient(45deg, #ff6b6b, #feca57);
+            color: white;
+        }
+
+        .feature-list li:last-child {
+            border-bottom-left-radius: 15px;
+            border-bottom-right-radius: 15px;
+            background: linear-gradient(45deg, #48dbfb, #0abde3);
+            color: white;
+        }
+
+        .feature-list li:nth-child(odd) {
+            background: #f8f9fa;
+        }
+
+        .feature-list li:nth-child(even):hover {
+            background: #e9ecef;
+        }
+
+        .feature-list {
+            list-style: none;
+            max-width: 400px;
+        }
+
+        .feature-list li {
+            padding: 20px;
+            margin: 10px 0;
+            border-left: 5px solid #007bff;
+            transition: all 0.3s;
+        }
+
+        /* Pseudo-elements */
+        h1::before {
+            content: '🚀 ';
+            font-size: 1.2em;
+        }
+
+        h1::first-letter {
+            font-size: 3em;
+            color: #ff6b6b;
+            float: left;
+            margin-right: 10px;
+        }
+
+        /* Buttons - OOCSS */
+        .btn {
+            display: inline-block;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 50px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn--primary {
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            color: white;
+        }
+
+        .btn--secondary {
+            background: transparent;
+            color: #667eea;
+            border: 2px solid #667eea;
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+        }
+
+        /* Filters & Transforms */
+        .hero-image {
+            width: 300px;
+            height: 200px;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 200"><rect fill="%23667eea" width="300" height="200"/><text x="150" y="100" font-size="20" fill="white" text-anchor="middle">Hero Image</text></svg>') center/cover;
+            filter: brightness(1.2) contrast(1.1) drop-shadow(0 10px 20px rgba(0,0,0,0.3));
+            border-radius: 15px;
+            margin: 20px auto;
+            transition: all 0.5s;
+        }
+
+        .hero-image:hover {
+            filter: brightness(0.8) sepia(0.3) hue-rotate(200deg);
+            transform: rotateY(10deg) scale(1.1);
+        }
+
+        /* Transitions & Animations */
+        .bounce {
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+            40% { transform: translateY(-20px); }
+            60% { transform: translateY(-10px); }
+        }
+
+        /* Focus states */
+        input:focus {
+            outline: 3px solid #667eea;
+            outline-offset: 2px;
+        }
+
+        /* Media Queries - Responsive */
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+                padding: 10px;
+            }
+            
+            h1 {
+                font-size: 2em;
+            }
+            
+            .btn {
+                width: 100%;
+                margin: 10px 0;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            * {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+        }
+
+        header {
+            grid-column: 1 / -1;
+            text-align: center;
+            padding: 60px 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Interactive CSS Mastery Demo</h1>
+        <p>Hover everywhere, resize window, focus inputs—every interaction shows advanced CSS in action!</p>
+        <a href="#features" class="btn btn--primary bounce">Explore Features</a>
+        <div class="hero-image"></div>
+    </header>
+
+    <div class="container">
+        <section class="card">
+            <h2>Key Features</h2>
+            <ul class="feature-list">
+                <li>Responsive Design with Media Queries</li>
+                <li>Pseudo-classes (:hover, :first-child, nth-child)</li>
+                <li>Pseudo-elements (::before, ::first-letter)</li>
+                <li>CSS Filters & Transforms</li>
+                <li>Smooth Transitions & Animations</li>
+                <li>Object-Oriented CSS Patterns</li>
+            </ul>
+            <input type="text" placeholder="Type here to see focus effect...">
+        </section>
+
+        <section class="card">
+            <h2>Why This Demo?</h2>
+            <p>Single file—no JS needed. Perfect for interviews, portfolios, or lab submissions. All modern CSS covered effectively.</p>
+            <a href="#" class="btn btn--primary">Get Started</a>
+            <a href="#" class="btn btn--secondary">Learn More</a>
+        </section>
+    </div>
+</body>
+</html>
