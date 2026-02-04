@@ -1,0 +1,80 @@
+
+  <style>
+            :root {
+                --bg-color:#ffffff;
+                --text-color:#222222;
+                --accent-color:#4f46es;
+            }
+            body.dark{
+                --bg-color:#0f172a;
+                --text-color:#e5e7eb;
+                --card-color:#1e293b;
+            }
+            *{
+                margin:0;
+                padding:0;
+                box-sizing:border-box;
+                font-family: Arial, sans-serif;
+            }
+             body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            transition: all 0.4s ease;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 40px;
+            background: var(--card-color);
+        }
+
+        header h1 {
+            color: var(--accent-color);
+        }
+
+        button {
+            padding: 8px 16px;
+            border: none;
+            cursor: pointer;
+            background: var(--accent-color);
+            color: white;
+            border-radius: 5px;
+        }
+
+        section {
+            padding: 40px;
+            animation: fadeIn 1s ease;
+        }
+
+        .card {
+            background: var(--card-color);
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 20px;
+            transition: transform 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: var(--card-color);
+            margin-top: 40px;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
