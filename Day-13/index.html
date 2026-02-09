@@ -1,17 +1,244 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>HTML CSS JS Basics</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Basics - Stylish Demo</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+            color: #333;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+
+        header {
+            background: linear-gradient(45deg, #ff6b6b, #4ecdc4);
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .content {
+            padding: 40px;
+        }
+
+        .demo-section {
+            margin-bottom: 40px;
+            padding: 30px;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            border-left: 5px solid #4ecdc4;
+        }
+
+        .section-title {
+            color: #4ecdc4;
+            font-size: 1.8em;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .demo-btn {
+            background: linear-gradient(45deg, #ff6b6b, #feca57);
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 50px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(255, 107, 107, 0.4);
+        }
+
+        .demo-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(255, 107, 107, 0.6);
+        }
+
+        .output {
+            background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 20px;
+            font-family: 'Courier New', monospace;
+            font-size: 16px;
+            border-left: 4px solid #ff6b6b;
+            min-height: 60px;
+        }
+
+        .code-snippet {
+            background: #2d3748;
+            color: #e2e8f0;
+            padding: 20px;
+            border-radius: 10px;
+            font-family: 'Courier New', monospace;
+            margin: 15px 0;
+            overflow-x: auto;
+        }
+
+        .highlight {
+            background: #48bb78;
+            color: #000;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-weight: bold;
+        }
+
+        @media (max-width: 768px) {
+            .content {
+                padding: 20px;
+            }
+            h1 {
+                font-size: 2em;
+            }
+        }
+    </style>
 </head>
 <body>
+    <div class="container">
+        <header>
+            <h1>🎨 JS Basics Demo</h1>
+            <p>HTML5 • Modern CSS • JavaScript Operators & Variables</p>
+        </header>
 
-  <h1>JavaScript Basics</h1>
-  <button onclick="runJS()">Run JS</button>
+        <div class="content">
+            <!-- Variables Section -->
+            <div class="demo-section">
+                <h2 class="section-title">📦 Variables (var, let, const)</h2>
+                <div class="code-snippet">
+let <span class="highlight">changeable</span> = 20;<br>
+const <span class="highlight">fixed</span> = 30;<br>
+<span class="highlight">changeable</span> = 25; // ✅ OK
+                </div>
+                <button class="demo-btn" onclick="demoVariables()">Run Variables Demo</button>
+                <div id="var-output" class="output">Click button to test variables...</div>
+            </div>
 
-  <div id="output"></div>
+            <!-- Data Types & typeof -->
+            <div class="demo-section">
+                <h2 class="section-title">🔍 Data Types & typeof</h2>
+                <button class="demo-btn" onclick="demoTypes()">Test Types</button>
+                <div id="type-output" class="output">Click to see data types...</div>
+            </div>
 
-  <script src="script.js"></script>
+            <!-- Arithmetic Operators -->
+            <div class="demo-section">
+                <h2 class="section-title">➕➖✖️➗ Arithmetic Operators</h2>
+                <button class="demo-btn" onclick="demoArithmetic()">Calculate</button>
+                <div id="arith-output" class="output">Results will appear here...</div>
+            </div>
+
+            <!-- Plus Operator Deep Dive -->
+            <div class="demo-section">
+                <h2 class="section-title">🔬 Plus (+) Operator Deep Dive</h2>
+                <button class="demo-btn" onclick="demoPlus()">Plus Deep Dive</button>
+                <div id="plus-output" class="output">Discover + behavior...</div>
+            </div>
+
+            <!-- Comparison Operators -->
+            <div class="demo-section">
+                <h2 class="section-title">⚖️ Comparison Operators</h2>
+                <button class="demo-btn" onclick="demoComparison()">Compare Values</button>
+                <div id="comp-output" class="output">Comparison results...</div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Variables Demo
+        function demoVariables() {
+            var oldStyle = 10;
+            let changeable = 20;
+            const fixed = 30;
+            changeable = 25;
+            
+            document.getElementById('var-output').innerHTML = `
+                <strong>var:</strong> ${oldStyle} (function scope)<br>
+                <strong>let:</strong> ${changeable} (block scope, changed from 20)<br>
+                <strong>const:</strong> ${fixed} (cannot reassign)<br>
+                <span style="color: #48bb78;">✅ All variables work correctly!</span>
+            `;
+        }
+
+        // Data Types Demo
+        function demoTypes() {
+            let num = 42;
+            let str = "hello";
+            let bool = true;
+            let undef;
+            let nul = null;
+
+            document.getElementById('type-output').innerHTML = `
+                <strong>typeof 42:</strong> ${typeof num}<br>
+                <strong>typeof "hello":</strong> ${typeof str}<br>
+                <strong>typeof true:</strong> ${typeof bool}<br>
+                <strong>typeof undefined:</strong> ${typeof undef}<br>
+                <strong>typeof null:</strong> ${typeof nul}<br>
+                <span style="color: #48bb78;">typeof returns string descriptions!</span>
+            `;
+        }
+
+        // Arithmetic Operators
+        function demoArithmetic() {
+            let a = 10, b = 3;
+            document.getElementById('arith-output').innerHTML = `
+                <strong>10 + 3 =</strong> ${a + b}<br>
+                <strong>10 - 3 =</strong> ${a - b}<br>
+                <strong>10 × 3 =</strong> ${a * b}<br>
+                <strong>10 ÷ 3 =</strong> ${a / b}<br>
+                <strong>10 % 3 =</strong> ${a % b}<br>
+                <strong>10² =</strong> ${a ** 2}
+            `;
+        }
+
+        // Plus Operator Deep Dive
+        function demoPlus() {
+            document.getElementById('plus-output').innerHTML = `
+                <strong>5 + 5:</strong> ${5 + 5} (number addition)<br>
+                <strong>"5" + 5:</strong> "${"5" + 5}" (string concat)<br>
+                <strong>5 + "5":</strong> "${5 + "5"}" (number → string)<br>
+                <strong>+"5" + 5:</strong> ${+"5" + 5} (unary + converts to number)<br>
+                <span style="color: #ff6b6b;">⚠️ + coerces based on string presence!</span>
+            `;
+        }
+
+        // Comparison Operators
+        function demoComparison() {
+            let x = 5, y = "5";
+            document.getElementById('comp-output').innerHTML = `
+                <strong>5 == "5":</strong> ${x == y} (loose, true)<br>
+                <strong>5 === "5":</strong> ${x === y} (strict, false)<br>
+                <strong>5 > 3:</strong> ${x > 3}<br>
+                <strong>5 >= 5:</strong> ${x >= 5}<br>
+                <span style="color: #48bb78;">✅ Always prefer === for safety!</span>
+            `;
+        }
+    </script>
 </body>
 </html>
