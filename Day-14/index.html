@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DAY 14 PRACTICE LAB</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="root">
+        <div class="lab-container">
+            <h1>Lab <span>Session</span> Day 14</h1>
+            <div class="header-info">
+                <p>Console is active. Use the buttons below or type in the input field to practice logic.</p>
+            </div>
+            
+            <div id="display" class="debug-panel">
+                Waiting for JS input... Type something or click buttons below!
+            </div>
+
+            <div class="controls">
+                <button class="btn btn-primary" onclick="labConsole.testCalculator()">Calculator</button>
+                <button class="btn btn-success" onclick="labConsole.testArrayOps()">Array Ops</button>
+                <button class="btn btn-danger" onclick="labConsole.testPalindrome()">Palindrome</button>
+                
+                <div class="input-group">
+                    <input type="text" id="userInput" placeholder="Type numbers (1,2,3) or text to test... Press Enter">
+                </div>
+            </div>
+
+            <div class="stats">
+                <div class="stat-card">
+                    <h3>Executions</h3>
+                    <div id="execCount">0</div>
+                </div>
+                <div class="stat-card">
+                    <h3>Success Rate</h3>
+                    <div id="successRate">100%</div>
+                </div>
+                <div class="stat-card">
+                    <h3>Last Op</h3>
+                    <div id="lastOp">-</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
