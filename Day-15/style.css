@@ -1,0 +1,179 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    padding: 20px;
+}
+
+#root {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.lab-container {
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 20px;
+    padding: 40px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px);
+}
+
+h1 {
+    font-size: 2.5rem;
+    color: #2c3e50;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+h1 span {
+    color: #667eea;
+    font-weight: 700;
+}
+
+#selectedDay {
+    background: linear-gradient(45deg, #667eea, #764ba2);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-weight: 900;
+    font-size: 3rem;
+}
+
+.lab-container p {
+    text-align: center;
+    color: #7f8c8d;
+    font-size: 1.1rem;
+    margin-bottom: 30px;
+}
+
+strong {
+    color: #2c3e50;
+    font-weight: 600;
+}
+
+.debug-panel {
+    min-height: 120px;
+    background: linear-gradient(145deg, #f8f9fa, #e9ecef);
+    border: 2px solid #dee2e6;
+    border-radius: 15px;
+    padding: 25px;
+    margin-bottom: 30px;
+    font-family: 'Courier New', monospace;
+    font-size: 1.1rem;
+    color: #2c3e50;
+    box-shadow: inset 0 2px 10px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+}
+
+.debug-panel::before {
+    content: "▶ ";
+    color: #28a745;
+    font-weight: bold;
+}
+
+.console-section {
+    background: #1e1e1e;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.console-header {
+    background: linear-gradient(90deg, #667eea, #764ba2);
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+}
+
+.console-header span {
+    font-size: 1.3rem;
+    font-weight: 600;
+}
+
+.run-button {
+    background: #28a745;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 25px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(40, 167, 69, 0.3);
+}
+
+.run-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(40, 167, 69, 0.4);
+    background: #218838;
+}
+
+.code-editor {
+    width: 100%;
+    height: 300px;
+    background: #2d2d2d;
+    color: #f8f8f2;
+    border: none;
+    padding: 20px;
+    font-family: 'Fira Code', 'Courier New', monospace;
+    font-size: 14px;
+    line-height: 1.5;
+    resize: none;
+    outline: none;
+    tab-size: 2;
+}
+
+.code-editor::placeholder {
+    color: #6c757d;
+}
+
+.console-output {
+    background: #000;
+    color: #00ff00;
+    padding: 20px;
+    font-family: 'Fira Code', 'Courier New', monospace;
+    font-size: 14px;
+    max-height: 200px;
+    overflow-y: auto;
+    white-space: pre-wrap;
+}
+
+.console-output::before {
+    content: "> ";
+    color: #28a745;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .lab-container {
+        padding: 20px;
+        margin: 10px;
+    }
+    
+    h1 {
+        font-size: 2rem;
+    }
+    
+    #selectedDay {
+        font-size: 2.2rem;
+    }
+    
+    .console-header {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+    }
+    
+    .code-editor {
+        height: 250px;
+    }
+}

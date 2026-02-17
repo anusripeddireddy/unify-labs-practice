@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day 15 Practice Lab</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="root">
+        <div class="lab-container">
+            <h1>Lab <span>Session</span> <span id="selectedDay">15</span></h1>
+            <p>Console is active. Use the <strong>JS Tab</strong> to practice logic.</p>
+            <div id="display" class="debug-panel">Waiting for JS input...</div>
+            
+            <!-- JS Console Area -->
+            <div class="console-section">
+                <div class="console-header">
+                    <span>JS Console</span>
+                    <button id="runBtn" class="run-button">Run Code</button>
+                </div>
+                <textarea id="codeEditor" class="code-editor" placeholder="Write your JavaScript code here...">// Example: Update the display
+console.log('Hello from Day 15!');
+document.getElementById('display').innerHTML = 'Code executed successfully!';
+</textarea>
+                <div id="consoleOutput" class="console-output"></div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
