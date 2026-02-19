@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Interactive Task Dashboard</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="app">
+    <header class="app-header">
+      <h1>Interactive Task Dashboard</h1>
+      <p>Manage your daily tasks efficiently.</p>
+    </header>
+
+    <main class="app-main">
+      <!-- Task input -->
+      <form id="taskForm" class="task-form">
+        <input
+          type="text"
+          id="taskInput"
+          placeholder="Add a new task..."
+          autocomplete="off"
+        />
+        <button type="submit">Add</button>
+      </form>
+
+      <!-- Stats -->
+      <section class="task-stats">
+        <span>Total: <strong id="totalCount">0</strong></span>
+        <span>Completed: <strong id="completedCount">0</strong></span>
+        <span>Pending: <strong id="pendingCount">0</strong></span>
+      </section>
+
+      <!-- Task list -->
+      <ul id="taskList" class="task-list">
+        <!-- Tasks injected by JS -->
+      </ul>
+    </main>
+
+    <footer class="app-footer">
+      <small>HTML • CSS • JavaScript To‑Do Dashboard</small>
+    </footer>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
