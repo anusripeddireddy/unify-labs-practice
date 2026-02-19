@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Task Master Data Dashboard</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="header">
+    <h1>Task Master Data Dashboard</h1>
+    <p>Student Projects Management (Filter • Map • Reduce)</p>
+  </header>
+
+  <main class="container">
+    <!-- Controls -->
+    <section class="controls">
+      <div class="control-group">
+        <label for="statusFilter">Status</label>
+        <select id="statusFilter">
+          <option value="all">All</option>
+          <option value="not-started">Not Started</option>
+          <option value="in-progress">In Progress</option>
+          <option value="completed">Completed</option>
+        </select>
+      </div>
+
+      <div class="control-group">
+        <label for="searchInput">Search (Student / Title)</label>
+        <input
+          type="text"
+          id="searchInput"
+          placeholder="Type to search..."
+        />
+      </div>
+
+      <div class="control-group">
+        <label for="minScore">Min Score</label>
+        <input
+          type="number"
+          id="minScore"
+          min="0"
+          max="100"
+          value="0"
+        />
+      </div>
+
+      <button id="resetBtn" class="btn-secondary">Reset</button>
+    </section>
+
+    <!-- Stats (using reduce) -->
+    <section class="stats">
+      <div class="stat-card">
+        <h3>Total Projects</h3>
+        <p id="totalProjects">0</p>
+      </div>
+      <div class="stat-card">
+        <h3>Completed</h3>
+        <p id="completedProjects">0</p>
+      </div>
+      <div class="stat-card">
+        <h3>Avg Score</h3>
+        <p id="averageScore">0</p>
+      </div>
+      <div class="stat-card">
+        <h3>High Score</h3>
+        <p id="maxScore">0</p>
+      </div>
+    </section>
+
+    <!-- Table (using map to render rows) -->
+    <section class="table-wrapper">
+      <table>
+        <thead>
+          <tr>
+            <th>Student</th>
+            <th>Project Title</th>
+            <th>Category</th>
+            <th>Status</th>
+            <th>Score</th>
+          </tr>
+        </thead>
+        <tbody id="projectsBody">
+          <!-- Filled by JS -->
+        </tbody>
+      </table>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <small>Demo Dashboard • Vanilla HTML, CSS &amp; JS</small>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
