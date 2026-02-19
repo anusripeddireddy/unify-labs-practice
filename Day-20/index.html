@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Real-Time Weather Dashboard</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+  <div class="weather-app">
+    <header class="weather-header">
+      <h1><i class="fas fa-cloud-sun"></i> Real-Time Weather Dashboard</h1>
+      <p>Live weather updates every 10 minutes</p>
+    </header>
+
+    <main class="weather-main">
+      <!-- Location Search -->
+      <div class="search-section">
+        <div class="search-box">
+          <input type="text" id="cityInput" placeholder="Enter city name (e.g., Vijayawada, London)">
+          <button id="searchBtn"><i class="fas fa-search"></i></button>
+        </div>
+        <div id="locationDisplay" class="location-display"></div>
+      </div>
+
+      <!-- Current Weather -->
+      <section class="current-weather" id="currentWeather">
+        <div class="weather-card">
+          <div class="weather-icon" id="weatherIcon">
+            <i class="fas fa-cloud"></i>
+          </div>
+          <div class="weather-primary">
+            <div class="temp-display" id="tempDisplay">--°C</div>
+            <div class="condition" id="condition">Loading...</div>
+          </div>
+          <div class="weather-details">
+            <div class="detail-item">
+              <span class="detail-label">Feels Like</span>
+              <span id="feelsLike">--°C</span>
+            </div>
+            <div class="detail-item">
+              <span class="detail-label">Humidity</span>
+              <span id="humidity">--%</span>
+            </div>
+            <div class="detail-item">
+              <span class="detail-label">Wind</span>
+              <span id="wind">-- km/h</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Hourly Forecast -->
+      <section class="hourly-forecast">
+        <h3><i class="fas fa-clock"></i> Next 12 Hours</h3>
+        <div class="hourly-container" id="hourlyForecast">
+          <!-- Hourly cards populated by JS -->
+        </div>
+      </section>
+
+      <!-- Last Updated -->
+      <div class="last-updated" id="lastUpdated">
+        Last updated: Never
+      </div>
+    </main>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
