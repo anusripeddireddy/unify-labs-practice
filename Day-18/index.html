@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Digital Pet Simulator</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>🐾 Digital Pet Simulator 🐾</h1>
+      <p>Care for your virtual pet! Keep them fed and happy.</p>
+    </header>
+
+    <main class="pet-area">
+      <!-- Pet Display -->
+      <div class="pet-container">
+        <div class="pet-visual" id="petVisual">
+          <div class="pet-sprite" id="petSprite"></div>
+        </div>
+        <div class="pet-name" id="petName"></div>
+      </div>
+
+      <!-- Stats -->
+      <div class="stats-grid">
+        <div class="stat-card">
+          <div class="stat-label">Hunger</div>
+          <div class="stat-bar">
+            <div class="stat-fill" id="hungerBar"></div>
+          </div>
+          <span class="stat-value" id="hungerValue">50</span>
+        </div>
+        <div class="stat-card">
+          <div class="stat-label">Energy</div>
+          <div class="stat-bar">
+            <div class="stat-fill" id="energyBar"></div>
+          </div>
+          <span class="stat-value" id="energyValue">50</span>
+        </div>
+        <div class="stat-card">
+          <div class="stat-label">Happiness</div>
+          <div class="stat-bar">
+            <div class="stat-fill" id="happinessBar"></div>
+          </div>
+          <span class="stat-value" id="happinessValue">50</span>
+        </div>
+      </div>
+
+      <!-- Actions -->
+      <div class="actions">
+        <button class="action-btn" id="feedBtn">🍖 Feed</button>
+        <button class="action-btn" id="playBtn">⚽ Play</button>
+        <button class="action-btn" id="sleepBtn">😴 Sleep</button>
+        <button class="action-btn special" id="newPetBtn">New Pet</button>
+      </div>
+
+      <!-- Status Messages -->
+      <div class="status-message" id="statusMsg"></div>
+    </main>
+
+    <footer>
+      <small>Built with ES6 Classes • Auto-saves progress</small>
+    </footer>
+  </div>
+
+  <script src="pet.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
