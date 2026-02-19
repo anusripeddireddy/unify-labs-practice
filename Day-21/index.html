@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Persistent Settings Manager</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="app-container" id="appContainer">
+    <header class="header">
+      <h1>⚙️ Persistent Settings Manager</h1>
+      <p>Your preferences are automatically saved and restored</p>
+    </header>
+
+    <main class="main-content">
+      <!-- Demo Content -->
+      <section class="demo-section">
+        <h2>Sample Content Area</h2>
+        <p>This text demonstrates how settings affect the entire app. Try changing theme, language, and font size!</p>
+        <p>Settings are saved to your browser and automatically restored when you return.</p>
+      </section>
+
+      <!-- Settings Panel -->
+      <section class="settings-panel">
+        <h2><i class="fas fa-cog"></i> Settings</h2>
+        
+        <!-- Theme Settings -->
+        <div class="setting-group">
+          <label>Theme</label>
+          <div class="theme-selector">
+            <button class="theme-btn active" data-theme="light" title="Light">
+              <i class="fas fa-sun"></i>
+            </button>
+            <button class="theme-btn" data-theme="dark" title="Dark">
+              <i class="fas fa-moon"></i>
+            </button>
+            <button class="theme-btn" data-theme="blue" title="Blue">
+              <i class="fas fa-water"></i>
+            </button>
+            <button class="theme-btn" data-theme="green" title="Green">
+              <i class="fas fa-leaf"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- Language Settings -->
+        <div class="setting-group">
+          <label>Language</label>
+          <select id="languageSelect" class="setting-select">
+            <option value="en">English</option>
+            <option value="es">Español</option>
+            <option value="fr">Français</option>
+            <option value="hi">हिंदी</option>
+            <option value="de">Deutsch</option>
+          </select>
+        </div>
+
+        <!-- Font Size -->
+        <div class="setting-group">
+          <label>Font Size</label>
+          <div class="font-size-selector">
+            <button class="font-btn active" data-size="small" title="Small">
+              <i class="fas fa-text-height"></i> S
+            </button>
+            <button class="font-btn" data-size="medium" title="Medium">
+              <i class="fas fa-text-height"></i> M
+            </button>
+            <button class="font-btn" data-size="large" title="Large">
+              <i class="fas fa-text-height"></i> L
+            </button>
+          </div>
+        </div>
+
+        <!-- Status -->
+        <div class="status-bar" id="statusBar">
+          Settings saved automatically
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <small>Preferences persist across browser sessions using localStorage</small>
+    </footer>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
+  <script src="settings.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
