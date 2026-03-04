@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>The Shop – Data Architect</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="app">
+    <header>
+        <h1>The Shop – Data Architect</h1>
+        <p>Practice building rich product documents and retrieving items by criteria.</p>
+    </header>
+
+    <section class="layout">
+        <aside class="filters">
+            <h2>Filter Products</h2>
+
+            <label>
+                Category
+                <select id="categoryFilter">
+                    <option value="all">All</option>
+                    <option value="electronics">Electronics</option>
+                    <option value="fashion">Fashion</option>
+                    <option value="home">Home</option>
+                </select>
+            </label>
+
+            <label>
+                Brand
+                <select id="brandFilter">
+                    <option value="all">All</option>
+                    <option value="Acme">Acme</option>
+                    <option value="NovaTech">NovaTech</option>
+                    <option value="UrbanWear">UrbanWear</option>
+                    <option value="HomeCraft">HomeCraft</option>
+                </select>
+            </label>
+
+            <label>
+                Max Price (₹)
+                <input type="number" id="priceFilter" placeholder="e.g. 2500">
+            </label>
+
+            <label class="checkbox-row">
+                <input type="checkbox" id="inStockFilter">
+                In stock only
+            </label>
+
+            <label>
+                Minimum Rating
+                <select id="ratingFilter">
+                    <option value="0">Any</option>
+                    <option value="3">3★+</option>
+                    <option value="4">4★+</option>
+                    <option value="4.5">4.5★+</option>
+                </select>
+            </label>
+
+            <button id="applyFilters">Apply filters</button>
+            <button id="resetFilters" class="secondary">Reset</button>
+        </aside>
+
+        <main>
+            <section class="query-view">
+                <h2>Current “Document Query”</h2>
+                <pre id="queryPreview"></pre>
+            </section>
+
+            <section class="results">
+                <h2>Matching Products</h2>
+                <div id="resultsCount"></div>
+                <div id="productsGrid" class="products-grid"></div>
+            </section>
+        </main>
+    </section>
+
+    <footer>
+        <p>Day 23 – Data Architect: building the data layer for a modern E‑commerce shop.</p>
+    </footer>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
