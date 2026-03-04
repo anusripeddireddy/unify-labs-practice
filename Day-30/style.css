@@ -1,0 +1,130 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+    --primary: linear-gradient(135deg, #ff6b6b, #feca57);
+    --secondary: linear-gradient(135deg, #4facfe, #00f2fe);
+    --dark: #0f0f23;
+    --glass: rgba(255,255,255,0.05);
+}
+
+body {
+    font-family: 'Segoe UI', system-ui, sans-serif;
+    background: var(--dark);
+    color: #fff;
+    line-height: 1.6;
+}
+
+.container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+
+/* Navbar */
+.navbar {
+    background: rgba(15,15,35,0.95);
+    backdrop-filter: blur(20px);
+    position: sticky; top: 0; z-index: 100;
+}
+
+.nav-container {
+    max-width: 1200px; margin: 0 auto; padding: 1rem 20px;
+    display: flex; justify-content: space-between; align-items: center;
+}
+
+.logo {
+    font-size: 1.8rem; font-weight: 800;
+    background: var(--primary); -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+}
+
+.nav-tabs { display: flex; gap: 2rem; }
+.nav-tab {
+    color: #ccc; text-decoration: none; padding: 0.75rem 1.5rem;
+    border-radius: 50px; font-weight: 500; transition: all 0.3s;
+}
+.nav-tab:hover, .nav-tab.active { 
+    background: rgba(255,255,255,0.1); color: #fff; transform: translateY(-2px);
+}
+
+/* Tabs */
+.tab { display: none; min-height: 100vh; padding: 2rem 0; }
+.tab.active { display: block; }
+
+/* Hero */
+.hero {
+    text-align: center; padding: 4rem 0; background: var(--glass);
+    border-radius: 20px; margin-bottom: 3rem; backdrop-filter: blur(10px);
+}
+.hero h1 { font-size: clamp(2.5rem, 5vw, 4rem); margin-bottom: 1rem; }
+
+/* Filters */
+.filters {
+    display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 1rem; margin-bottom: 2rem;
+    align-items: end;
+}
+@media (max-width: 768px) { .filters { grid-template-columns: 1fr; } }
+
+.filters input, .filters select {
+    padding: 1rem 1.5rem; border: 2px solid rgba(255,255,255,0.2);
+    border-radius: 50px; background: var(--glass); color: #fff; font-size: 1rem;
+    backdrop-filter: blur(10px);
+}
+.price-range { display: flex; gap: 1rem; align-items: center; }
+
+/* Products Grid */
+.products-grid {
+    display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 2rem;
+}
+
+.product-card {
+    background: var(--glass); border-radius: 20px; overflow: hidden;
+    border: 1px solid rgba(255,255,255,0.1); transition: all 0.4s;
+    backdrop-filter: blur(15px); cursor: pointer;
+}
+.product-card:hover {
+    transform: translateY(-15px); border-color: #ff6b6b; box-shadow: 0 30px 60px rgba(0,0,0,0.3);
+}
+.product-image {
+    height: 220px; background: linear-gradient(45deg, #ff6b6b, #4facfe);
+    display: flex; align-items: center; justify-content: center; font-size: 4rem;
+}
+.product-info { padding: 1.5rem; }
+.product-name { font-size: 1.3rem; font-weight: 700; margin-bottom: 0.5rem; }
+.product-price { 
+    font-size: 1.8rem; font-weight: 800; background: var(--primary);
+    -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+}
+.add-to-cart {
+    width: 100%; padding: 1rem; background: var(--secondary); color: white;
+    border: none; border-radius: 12px; font-weight: 600; cursor: pointer; margin-top: 1rem;
+}
+
+/* Cart */
+.cart-list { display: flex; flex-direction: column; gap: 1.5rem; margin-bottom: 2rem; }
+.cart-item {
+    display: grid; grid-template-columns: 80px 1fr auto auto; gap: 1rem; align-items: center;
+    background: var(--glass); padding: 1.5rem; border-radius: 15px;
+}
+.cart-total {
+    background: var(--glass); padding: 2rem; border-radius: 20px; text-align: center;
+    margin-top: 2rem;
+}
+.btn-checkout {
+    width: 100%; padding: 1.5rem; background: var(--primary); color: white;
+    border: none; border-radius: 15px; font-size: 1.2rem; font-weight: 700;
+}
+
+/* Orders */
+.orders-grid {
+    display: grid; grid-template-columns: repeat(auto-fill, minmax(400px, 1fr)); gap: 1.5rem;
+}
+.order-card {
+    background: var(--glass); padding: 2rem; border-radius: 20px;
+}
+
+/* Modal */
+.modal {
+    display: none; position: fixed; z-index: 1000; left: 0; top: 0;
+    width: 100%; height: 100%; background: rgba(0,0,0,0.8); backdrop-filter: blur(10px);
+}
+.modal-content {
+    background: var(--dark); margin: 5% auto; padding: 3rem; border-radius: 25px;
+    width: 90%; max-width: 500px; max-height: 80vh; overflow-y: auto;
+}
