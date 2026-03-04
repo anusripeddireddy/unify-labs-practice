@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shop API Admin Panel</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🛒 Shop API Admin Panel</h1>
+            <div class="api-status" id="apiStatus">Connecting...</div>
+        </header>
+
+        <!-- Create Product Form -->
+        <section class="form-section">
+            <h2>Create New Product</h2>
+            <form id="createForm">
+                <input type="text" id="name" placeholder="Product Name" required>
+                <input type="number" id="price" placeholder="Price" step="0.01" required>
+                <input type="url" id="image" placeholder="Image URL (optional)">
+                <textarea id="description" placeholder="Description (optional)"></textarea>
+                <button type="submit">➕ Add Product</button>
+            </form>
+        </section>
+
+        <!-- Products List -->
+        <section class="products-section">
+            <h2>Products (<span id="productsCount">0</span>)</h2>
+            <div id="productsContainer" class="products-grid">
+                <!-- Products will load here -->
+            </div>
+            <div id="loading" class="loading">Loading products...</div>
+            <div id="noProducts" class="no-products">No products found</div>
+        </section>
+    </div>
+
+    <!-- Edit Modal -->
+    <div id="editModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h3>Edit Product</h3>
+            <form id="editForm">
+                <input type="hidden" id="editId">
+                <input type="text" id="editName" required>
+                <input type="number" id="editPrice" step="0.01" required>
+                <input type="url" id="editImage">
+                <textarea id="editDescription"></textarea>
+                <div class="modal-buttons">
+                    <button type="submit">💾 Update</button>
+                    <button type="button" id="deleteBtn" class="delete-btn">🗑️ Delete</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
