@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Shop Manager – Inventory Control</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="app">
+    <header>
+        <h1>Shop Manager – Inventory Control</h1>
+        <p>Mass price updates, stock cleanup, and tag management for your shop inventory.</p>
+    </header>
+
+    <section class="layout">
+        <aside class="controls">
+            <h2>Bulk Actions</h2>
+
+            <div class="panel">
+                <h3>1. Mass Price Increase</h3>
+                <label>
+                    Category
+                    <select id="priceCategory">
+                        <option value="all">All</option>
+                        <option value="electronics">Electronics</option>
+                        <option value="fashion">Fashion</option>
+                        <option value="home">Home</option>
+                    </select>
+                </label>
+
+                <label>
+                    Increase by %
+                    <input type="number" id="pricePercent" placeholder="e.g. 10">
+                </label>
+
+                <button id="btnIncreasePrice">Apply Price Increase</button>
+            </div>
+
+            <div class="panel">
+                <h3>2. Delete Low Stock</h3>
+                <label>
+                    Remove products with stock less than
+                    <input type="number" id="lowStockThreshold" placeholder="e.g. 3">
+                </label>
+                <button id="btnDeleteLowStock" class="danger">Delete from Inventory</button>
+            </div>
+
+            <div class="panel">
+                <h3>3. Manage Tags</h3>
+                <label>
+                    Select product
+                    <select id="tagProductSelect"></select>
+                </label>
+
+                <label>
+                    New tag
+                    <input type="text" id="tagInput" placeholder="e.g. featured">
+                </label>
+
+                <div class="tag-buttons">
+                    <button id="btnAddTag">Add Tag</button>
+                    <button id="btnRemoveTag" class="secondary">Remove Tag</button>
+                </div>
+            </div>
+        </aside>
+
+        <main>
+            <section class="summary">
+                <h2>Inventory Summary</h2>
+                <div id="summaryText"></div>
+            </section>
+
+            <section class="inventory">
+                <h2>Current Products</h2>
+                <div id="productList" class="product-list"></div>
+            </section>
+        </main>
+    </section>
+
+    <footer>
+        <p>Day 24 – Shop Manager: practicing inventory updates and array operations in JavaScript.</p>
+    </footer>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
