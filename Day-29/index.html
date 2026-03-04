@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ZENITH - Modern Blogging Platform</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <h1 class="logo"><i class="fas fa-star"></i> ZENITH</h1>
+            <div class="nav-links">
+                <a href="#home" class="nav-link active" data-section="home">Home</a>
+                <a href="#create" class="nav-link" data-section="create">✍️ New Post</a>
+                <a href="#posts" class="nav-link" data-section="posts">📋 Manage</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Home/Blog Feed -->
+    <section id="home" class="section active">
+        <div class="container">
+            <header class="hero">
+                <h1>Welcome to ZENITH</h1>
+                <p>Where ideas become timeless stories</p>
+            </header>
+            <div class="filters">
+                <input type="text" id="searchInput" placeholder="🔍 Search posts...">
+                <select id="categoryFilter">
+                    <option value="">All Categories</option>
+                    <option value="tech">Tech</option>
+                    <option value="lifestyle">Lifestyle</option>
+                    <option value="travel">Travel</option>
+                </select>
+            </div>
+            <div id="postsFeed" class="posts-grid"></div>
+        </div>
+    </section>
+
+    <!-- Create Post -->
+    <section id="create" class="section">
+        <div class="container">
+            <div class="form-card">
+                <h2><i class="fas fa-feather"></i> Create New Post</h2>
+                <form id="postForm">
+                    <input type="text" id="postTitle" placeholder="Post Title" required>
+                    <select id="postCategory" required>
+                        <option value="">Select Category</option>
+                        <option value="tech">Tech</option>
+                        <option value="lifestyle">Lifestyle</option>
+                        <option value="travel">Travel</option>
+                    </select>
+                    <textarea id="postContent" placeholder="Start writing your story..." required></textarea>
+                    <div class="form-actions">
+                        <button type="submit" class="btn-primary">
+                            <i class="fas fa-paper-plane"></i> Publish
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Manage Posts -->
+    <section id="posts" class="section">
+        <div class="container">
+            <h2><i class="fas fa-list"></i> Manage Posts (<span id="postsCount">0</span>)</h2>
+            <div id="managePosts" class="posts-grid"></div>
+        </div>
+    </section>
+
+    <!-- Edit Modal -->
+    <div id="editModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h3>Edit Post</h3>
+            <form id="editForm">
+                <input type="hidden" id="editId">
+                <input type="text" id="editTitle" required>
+                <select id="editCategory" required>
+                    <option value="tech">Tech</option>
+                    <option value="lifestyle">Lifestyle</option>
+                    <option value="travel">Travel</option>
+                </select>
+                <textarea id="editContent" required></textarea>
+                <div class="modal-actions">
+                    <button type="submit" class="btn-primary">Update</button>
+                    <button type="button" id="deleteBtn" class="btn-danger">Delete</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
