@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🌐 Cloud Shop API - Atlas Edition</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>☁️ Shop API - MongoDB Atlas</h1>
+            <div class="status-grid">
+                <div class="status-card" id="apiStatus">Connecting to Atlas...</div>
+                <div class="status-card" id="productsCount">0 Products</div>
+                <div class="status-card cloud-badge">Atlas Cloud</div>
+            </div>
+        </header>
+
+        <section class="form-section">
+            <h2>Add Product to Cloud</h2>
+            <form id="createForm">
+                <input type="text" id="name" placeholder="Product Name" required>
+                <input type="number" id="price" placeholder="Price" step="0.01" required>
+                <input type="url" id="image" placeholder="Image URL">
+                <textarea id="description" placeholder="Description"></textarea>
+                <button type="submit">☁️ Save to Atlas</button>
+            </form>
+        </section>
+
+        <section class="products-section">
+            <h2>Cloud Products (<span id="count">0</span>)</h2>
+            <div id="productsContainer" class="products-grid"></div>
+            <div id="loading" class="loading">Connecting to Atlas cluster...</div>
+            <div id="noProducts" class="no-products">No products in cloud database</div>
+        </section>
+    </div>
+
+    <!-- Edit Modal -->
+    <div id="editModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h3>Edit Cloud Product</h3>
+            <form id="editForm">
+                <input type="hidden" id="editId">
+                <input type="text" id="editName" required>
+                <input type="number" id="editPrice" step="0.01" required>
+                <input type="url" id="editImage">
+                <textarea id="editDescription"></textarea>
+                <div class="modal-buttons">
+                    <button type="submit">💾 Update Cloud</button>
+                    <button type="button" id="deleteBtn" class="delete-btn">🗑️ Delete</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
