@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Database Groundwork - MongoDB Setup</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Database Groundwork</h1>
+        <p>Follow these steps to establish your local MongoDB environment, verify connection, and create your first visual database using MongoDB Compass.</p>
+        
+        <section class="step-section">
+            <h2>1. Install MongoDB Server</h2>
+            <ol class="steps">
+                <li>Download MongoDB Community Server from <a href="https://www.mongodb.com/try/download/community" target="_blank">official site</a> for your OS (Windows/macOS/Linux).</li>
+                <li>Run the installer with default settings. On Windows, include MongoDB as a service.</li>
+                <li>On macOS/Linux, use Homebrew or package manager: <code>brew tap mongodb/brew && brew install mongodb-community</code>.</li>
+            </ol>
+        </section>
+
+        <section class="step-section">
+            <h2>2. Verify Connection</h2>
+            <ol class="steps">
+                <li>Open terminal/command prompt.</li>
+                <li>Start MongoDB: <code>mongod</code> (or <code>sudo brew services start mongodb/brew/mongodb-community</code> on macOS).</li>
+                <li>In new terminal, connect: <code>mongosh</code> or <code>mongo</code>. You should see "test> " prompt.</li>
+                <li>Run <code>db.version()</code> to confirm. Exit with <code>exit</code>.</li>
+            </ol>
+        </section>
+
+        <section class="step-section">
+            <h2>3. Install & Use MongoDB Compass</h2>
+            <ol class="steps">
+                <li>Download MongoDB Compass from <a href="https://www.mongodb.com/try/download/compass" target="_blank">official site</a>.</li>
+                <li>Install and launch. Connect to <code>mongodb://localhost:27017</code>.</li>
+                <li>Click <strong>+</strong> next to "Databases". Enter DB name (e.g., "myFirstDB") and Collection name (e.g., "users").</li>
+                <li>Click "Create Database". Add data via "Add Data" > "Insert Document".</li>
+            </ol>
+            <div class="visual-example">
+                <p>Your first visual database is now ready! View schema, documents, and indexes graphically.</p>
+            </div>
+        </section>
+
+        <div class="status" id="status">Ready to start? Follow the steps above.</div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
